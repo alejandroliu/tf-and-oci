@@ -1,0 +1,33 @@
+#cloud-config
+debug: true
+disable_root: false
+# Do apt-get update
+package_update: true
+package_reboot_if_required: true
+packages:
+- pwgen
+- micro
+- python3-venv
+- zip
+- ncat
+- sslh
+- docker.io
+
+users:
+${file("users.yml")}
+
+ 
+
+runcmd:
+# Tweak /etc/hosts so that it finds localhost
+# - sed -i~ -e 's/^127\.0\.0\.1\s*.*$/127.0.0.1 localhost '$(uname -n)'/' /etc/hosts 
+# Enable tcp forwarding by default on sshd
+- "sed -i~ -e 's/^.*AllowTcpForwarding.*/AllowTcpForwarding yes/' /etc/ssh/sshd_config"
+# Configure sslh to forward to TLS to 8443
+- "sed -i~ -e 's/<change-me>/0.0.0.0/' -e 's/--ssl 127.0.0.1:443/--tls 127.0.0.1:8443/' /etc/default/sslh "
+- service sshd restart
+- service sslh restart
+# Uninstall apache2 (OCI image installs this by default)
+- DEBIAN_FRONTEND=noninteractive apt -yq remove --auto-remove apache2
+
+

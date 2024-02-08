@@ -1,0 +1,11 @@
+#
+# Define users
+#
+- name: toh8jieg
+  sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+  groups: users
+  lock_passwd: false
+  shell: /bin/bash
+  ssh_authorized_keys:
+  - ssh-rsa ... key 1 ...
+  - ssh-rsa ... key 2 ...

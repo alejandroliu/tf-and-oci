@@ -25,3 +25,10 @@ I have only tested these with OpenTOFU.
   - https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks
   - https://githooks.com/
 
+# ISSUES
+
+- Currently checking out the repo doesn't properly deploy
+  infrastructure out of the box.  I found myself first starting
+  with an empty set.  Deploy the vc stuff.  Then deploy the rest.
+
+
