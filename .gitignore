@@ -40,4 +40,7 @@ terraform.tfstate
 terraform.tfstate.backup
 
 default-id_key.pub
+default-id_key
 users.yml
+saved-*_*.zip
+
