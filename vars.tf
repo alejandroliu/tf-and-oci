@@ -1,9 +1,10 @@
 #
-# Define variables
+# Secret variables
 #
 variable "tenancy_ocid" {
   type        = string
   description = "ID of the tenant in OCI to use"
+  sensitive   = true
 }
 
 variable "user_ocid" {
@@ -19,11 +20,13 @@ variable "user_key_path" {
 variable "user_key_fingerprint" {
   type        = string
   description = "rsa key fingerprint or API user"
+  sensitive   = true
 }
 
 variable "compartment_ocid" {
   type        = string
   description = "ID of the compartment in OCI to use"
+  sensitive   = true
 }
 
 variable "region_name" {
