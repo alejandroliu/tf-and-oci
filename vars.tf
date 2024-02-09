@@ -1,6 +1,18 @@
 #
 # Secret variables
 #
+variable "cloudflare_api_token" {
+  type        = string
+  description = "API token with DNS:Edit permissions"
+  sensitive   = true
+}
+variable "cloudflare_zone_id" {
+  type        = string
+  sensitive   = true
+  description = "ID for Cloudflare zone (look-up in domain dashboard)"
+}
+
+
 variable "tenancy_ocid" {
   type        = string
   description = "ID of the tenant in OCI to use"
@@ -42,5 +54,4 @@ variable "img_ubuntu_2204_amd64" {
 variable "img_ubuntu_2204_arm64" {
   type = string
 }
-
 
