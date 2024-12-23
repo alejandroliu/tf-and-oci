@@ -14,8 +14,10 @@ module "vcn" {
   vcn_name = "general"
   vcn_dns_label = "gpnet"
   vcn_cidrs = ["10.10.0.0/16"]
-  
+
   create_internet_gateway = true
   create_nat_gateway = false
   create_service_gateway = false
+
+  depends_on = [ data.oci_identity_availability_domains.general_ads ]
 }

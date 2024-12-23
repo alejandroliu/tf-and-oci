@@ -16,10 +16,6 @@ I have only tested these with OpenTOFU.
 
 # TODO
 
-- Configure DNS via CloudFlare
-  - https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/record
-  - https://developers.cloudflare.com/terraform/tutorial/
-  - https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs
 - Pre-commit hook to create idvars.tf-sample
   - https://pre-commit.com/
   - https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks

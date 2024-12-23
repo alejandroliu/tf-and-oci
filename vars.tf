@@ -12,7 +12,6 @@ variable "cloudflare_zone_id" {
   description = "ID for Cloudflare zone (look-up in domain dashboard)"
 }
 
-
 variable "tenancy_ocid" {
   type        = string
   description = "ID of the tenant in OCI to use"
@@ -38,7 +37,6 @@ variable "user_key_fingerprint" {
 variable "compartment_ocid" {
   type        = string
   description = "ID of the compartment in OCI to use"
-  sensitive   = true
 }
 
 variable "region_name" {
